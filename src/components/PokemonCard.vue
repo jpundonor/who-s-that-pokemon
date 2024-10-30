@@ -29,6 +29,9 @@ export default {
     reveal() {
       this.isGuessed =
         this.pokemonName.toLowerCase() === this.pokemon.name.toLowerCase();
+      if (this.isGuessed) {
+        this.$emit("pokemon-guessed", this.pokemon);
+      }
     },
   },
 };
@@ -36,7 +39,6 @@ export default {
 
 <style scoped>
 .pokemon-card {
-  /* border: 1px solid #ccc; */
   border-radius: 5px;
   padding: 5px;
   margin: 10px;
